@@ -1,4 +1,5 @@
 up:
+	test -s ./key.pub || ssh-keygen -t rsa -f key
 	vagrant up
 
 down:
@@ -8,6 +9,7 @@ halt:
 	vagrant halt
 
 destroy:
+	rm -rf key key.pub
 	vagrant destroy
 
 install:

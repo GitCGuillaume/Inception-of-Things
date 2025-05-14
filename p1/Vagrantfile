@@ -1,13 +1,16 @@
+# https://docs.k3s.io/cli/server
 $server = <<-SCRIPT
 curl -sfL https://get.k3s.io | \
  INSTALL_K3S_EXEC="server" \
- sh -s - --flannel-backend none --token 12345
+ sh -s - --flannel-iface enp0s8 --bind-address 192.168.56.110  \
+ --token "$(cat /vagrant/key.pub)" --write-kubeconfig-mode 644
 SCRIPT
 
+# https://docs.k3s.io/cli/agent
 $client = <<-SCRIPT
 curl -sfL https://get.k3s.io | \
- INSTALL_K3S_EXEC="agent --server https://k3s.example.com \
- --token mypassword" sh -s -
+ env INSTALL_K3S_EXEC="agent" K3S_TOKEN="$(cat /vagrant/key.pub)" \
+ sh -s - --server https://192.168.56.110:6443 --flannel-iface enp0s8
 SCRIPT
 
 Vagrant.require_version "2.4.5"
