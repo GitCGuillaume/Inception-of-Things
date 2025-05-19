@@ -1,5 +1,5 @@
 .vagrant
+loader.rb
 ubuntu-bionic-18.04-cloudimg-console.log
 key
 key.pub
-*/.vagrant
