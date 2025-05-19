@@ -1,0 +1,27 @@
+# https://docs.k3s.io/cli/server
+$server = <<-SCRIPT
+ip route | grep 192.168.56.110 | awk '{print $3}'
+curl -sfL https://get.k3s.io | \
+ INSTALL_K3S_EXEC="server" \
+ sh -s - \
+ --flannel-iface $(ip route | grep 192.168.56.110 | awk '{print $3}') \
+ --bind-address 192.168.56.110  \
+ --write-kubeconfig-mode 644
+ kubectl apply -f /vagrant/cluster/ingress.yaml
+SCRIPT
+
+Vagrant.require_version "2.4.5"
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.box_version = "20230607.0.5"
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = 1024
+        vb.cpus = 2
+    end
+
+    config.vm.define "server" do |sv|
+        sv.vm.hostname = "gchopinS"
+        sv.vm.network "private_network", ip: "192.168.56.110"
+        sv.vm.provision "shell", inline: $server
+    end
+end
