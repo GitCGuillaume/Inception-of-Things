@@ -1,9 +1,12 @@
 # https://docs.k3s.io/cli/server
 $server = <<-SCRIPT
+ip route | grep 192.168.56.110 | awk '{print $3}'
 curl -sfL https://get.k3s.io | \
  INSTALL_K3S_EXEC="server" \
- sh -s - --flannel-iface enp0s8 --bind-address 192.168.56.110  \
- --token "$(cat /vagrant/key.pub)" --write-kubeconfig-mode 644
+ sh -s - \
+ --flannel-iface $(ip route | grep 192.168.56.110 | awk '{print $3}') \
+ --bind-address 192.168.56.110  \
+ --write-kubeconfig-mode 644
  kubectl apply -f /vagrant/cluster/ingress.yaml
 SCRIPT
 
