@@ -7,7 +7,9 @@ curl -sfL https://get.k3s.io | \
  --flannel-iface $(ip route | grep 192.168.56.110 | awk '{print $3}') \
  --bind-address 192.168.56.110  \
  --write-kubeconfig-mode 644
- kubectl apply -f /vagrant/cluster/ingress.yaml
+ kubectl apply -f /vagrant/confs/ingress.yaml
+ kubectl apply -f /vagrant/confs/services.yaml
+ kubectl apply -f /vagrant/confs/deployments.yaml
 SCRIPT
 
 Vagrant.require_version "2.4.5"
