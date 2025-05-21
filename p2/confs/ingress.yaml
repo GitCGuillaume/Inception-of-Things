@@ -4,7 +4,6 @@ kind: Ingress
 metadata:
   name: app-ingress
 spec:
-  ingressClassName: nginx
   rules:
     - host: app1.com
       http:
@@ -35,3 +34,8 @@ spec:
                 name: app3
                 port:
                   number: 80
+  defaultBackend:
+    service:
+      name: app3
+      port:
+        number: 80
