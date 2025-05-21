@@ -9,7 +9,7 @@ spec:
     - host: app1.com
       http:
         paths:
-          - path: /
+          - path: "/"
             pathType: Prefix
             backend:
               service:
@@ -19,7 +19,7 @@ spec:
     - host: app2.com
       http:
         paths:
-          - path: /
+          - path: "/"
             pathType: Prefix
             backend:
               service:
@@ -28,7 +28,7 @@ spec:
                   number: 80
     -  http:
         paths:
-          - path: /
+          - path: "/"
             pathType: Prefix
             backend:
               service:

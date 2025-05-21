@@ -6,7 +6,8 @@ spec:
   selector:
     app: app1
   ports:
-    - name: http
+    - protocol: TCP
+      name: http
       port: 80
       targetPort: 80
 ---
@@ -18,7 +19,8 @@ spec:
   selector:
     app: app2
   ports:
-    - name: http
+    - protocol: TCP
+      name: http
       port: 80
       targetPort: 80
 ---
@@ -30,6 +32,7 @@ spec:
   selector:
     app: app3
   ports:
-    - name: http
+    - protocol: TCP
+      name: http
       port: 80
       targetPort: 80
