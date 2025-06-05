@@ -1,18 +1,5 @@
-up:
-	vagrant up
-
-down:
-	vagrant halt
-
-halt:
-	vagrant halt
-
-destroy:
-	rm -rf key key.pub
-	vagrant destroy
 
 install:
-	brew tap hashicorp/tap
-	brew install hashicorp/tap/vagrant
+	wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 
-.PHONY: up down halt destroy install
+.PHONY: install
