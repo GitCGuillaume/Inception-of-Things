@@ -2,3 +2,4 @@
 ubuntu-bionic-18.04-cloudimg-console.log
 key
 key.pub
+.env
