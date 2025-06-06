@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: development-deployment
+  namespace: argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: development
+  template:
+    metadata:
+      labels:
+        app: development
+    spec:
+      containers:
+      - name: wil42
+        image: wil42/playground:v2
+        ports:
+        - containerPort: 8888
