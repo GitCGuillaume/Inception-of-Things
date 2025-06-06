@@ -19,13 +19,3 @@ spec:
                 name: argocd-server
                 port:
                   number: 80
-    -  host: localhost
-       http:
-        paths:
-          - path: "/"
-            pathType: Prefix
-            backend:
-              service:
-                name: development
-                port:
-                  number: 80

@@ -8,9 +8,9 @@ kubeAPI:
   hostPort: "6445"
 subnet: "172.28.0.0/16"
 ports:
-  - port: 8080:443
+  - port: 8080:80
     nodeFilters:
       - loadbalancer
-  - port: 8888:80
+  - port: 8888:8888
     nodeFilters:
       - loadbalancer

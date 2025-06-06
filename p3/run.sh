@@ -17,6 +17,7 @@ if [ "$1" ]; then
             kubectl apply -f confs/dev_ns.yaml
             kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.3/manifests/install.yaml
             kubectl apply -f confs/ingress.yaml
+            kubectl apply -f app/app-ingress.yaml
             kubectl apply -f confs/argocd-cmd-param-cm.yaml
             echo "Waiting for argocd pods: kubectl -n argocd wait --for=condition=ready pod --all --timeout=600s"
             kubectl -n argocd wait --for=condition=ready pod --all --timeout=600s
