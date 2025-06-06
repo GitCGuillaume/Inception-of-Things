@@ -1,4 +1,4 @@
-name="iot-gchopin";
+name="iot-gchopin"
 if [ -z "$1" ]; then
     echo "--create Create a new k3s cluster with containerized nodes (k3s in docker).";
     echo "--delete Delete cluster";
