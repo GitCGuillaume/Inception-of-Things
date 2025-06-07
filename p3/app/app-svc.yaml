@@ -5,9 +5,9 @@ metadata:
   namespace: argocd
 spec:
   selector:
-    app.kubernetes.io/name: development
+    app: development
   ports:
     - protocol: TCP
       name: http
       port: 80
-      targetPort: 80
+      targetPort: 8888
