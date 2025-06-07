@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: development
+  namespace: dev
+spec:
+  selector:
+    app: development
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+      targetPort: 8888
