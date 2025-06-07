@@ -25,6 +25,7 @@ if [ "$1" ]; then
             argocd login kubernetes.docker.internal:8080 --grpc-web --username admin --password $TMP_PSW --insecure
             argocd account update-password --grpc-web --new-password $PSW_ADM --current-password $TMP_PSW
             argocd repo add https://github.com/GitCGuillaume/Inception-of-Things.git
+            kubectl apply -f app/application.yaml
         else
             echo "Please add a .env file with PSW_ADM=(8..32 characters).";
         fi
