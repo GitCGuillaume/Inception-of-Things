@@ -1,6 +1,16 @@
 # Inception-of-Things
 
 ## Part 1:
+Cette partie consiste à générer des machines virtuelles avec Vagrant et Kubernetes et est une simple introduction aux Vagrantfiles.
+Vagrant est un utilitaire pour gérer les cycles de vie d'une machine virtuelle, il permet d'isoler des dépendances et créer des environnements de travail de façon à ce qu'on puisse tester des configurations et tester nos projets avant l'envoi en production de nos projets.
+
+Ce qui rend par la suite nos phases de tests et de publication beaucoup plus simples car nous pouvons créer un réseau de machines qui interagit entre elles de façon à déployer différents tests et par l'occasion tester la charge d'une machine.
+Ce qui réduit considérablement les erreurs de déploiements de nos projets par la suite.
+
+![image](https://github.com/user-attachments/assets/610bb910-2e40-4c83-99f5-0cf0057ef95f)
+La 1ère ligne : Installation correspondante au serveur, un noeud serveur correspond à un hote qui permet d'utiliser les commandes serveurs de l'outil K3s afin d'intéragir avec Kubernetes.
+
+La 2èle ligne : Installation correspondante à l'agent, un noeud agent va s'enregistrer auprès du serveur où il pourra faire tourner les pods et les services de kubernetes.
 
 ## Part 2:
 
