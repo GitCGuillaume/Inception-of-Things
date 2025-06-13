@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/GitCGuillaume/Inception-of-Things.git
     path: p3/app
-    targetRevision: main
+    targetRevision: gchopin
   destination:
     namespace: dev
     name: in-cluster
