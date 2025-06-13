@@ -10,11 +10,18 @@ Ce qui réduit considérablement les erreurs de déploiements de nos projets par
 ![image](https://github.com/user-attachments/assets/610bb910-2e40-4c83-99f5-0cf0057ef95f)
 La 1ère ligne : Installation correspondante au serveur, un noeud serveur correspond à un hote qui permet d'utiliser les commandes serveurs de l'outil K3s afin d'intéragir avec Kubernetes.
 
-La 2èle ligne : Installation correspondante à l'agent, un noeud agent va s'enregistrer auprès du serveur où il pourra faire tourner les pods et les services de kubernetes.
+La 2ème ligne : Installation correspondante à l'agent, un noeud agent va s'enregistrer auprès du serveur où il pourra faire tourner les pods et les services de kubernetes.
 
 ## Part 2:
 
+Maintenant que j'ai compris le principe de Vagrant avec l'utilisation de Kubernetes, je dois mettre en place un réseau qui fera tourner 3 serveurs webs.
+Le réseau doit correspondre à une configuration de 3 containers (qui correspond à faire tourner un système d'exploitation dans son propre environnement avec ses propres installations), accessibles depuis 3 services, le lien entre l'hôte et les différents services doit se faire depuis une configuration Ingress (qui consiste à faire une connexion entre le monde extérieur et le réseau de machines).
 ![image](https://github.com/user-attachments/assets/e438e270-8d54-47bf-9431-42fbd5d4d8ec)
+
+Représentation sous schéma d'un réseau Kubernetes avec 3 applications.
+
+![image](https://github.com/user-attachments/assets/049639ac-65ad-4481-8f1e-4740841b60d5)
+
 
 ## Part 3:
 
