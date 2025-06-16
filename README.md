@@ -42,7 +42,8 @@ bash ./run --list
 
 L'intégration continue consiste à partager un dépôt Git afin de faciliter les mises à jour sur les machines et faciliter le travail des collaborateurs sur un projet.
 
-Argo CD est un outil pour Kubernetes qui permet de déployer des applications au sein d'un cluster (groupe de machines au sein d’un réseau), Argo CD est configurable depuis des fichiers de configuration, une interface de ligne de commande et une interface utilisateur. 
+Argo CD est un outil pour Kubernetes qui permet de déployer des applications au sein d'un cluster (groupe de machines au sein d’un réseau), Argo CD est configurable depuis des fichiers de configuration, une interface de ligne de commande et une interface utilisateur.
+
 Par exemple, si Argo CD est configuré pour suivre un dépôt Git, et est réglé pour être synchronisé automatiquement ou manuellement, et que ce même dépôt est mis à jour, cela entraînera la mise à jour de l'état du projet dans le cluster Kubernetes.
 
 Argo CD:
